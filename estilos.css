@@ -28,6 +28,12 @@
 
 .botao-lilas {
     background-color: #9353FF;
+    transition: ease-in-out 0.3s;
+}
+
+.botao-lilas:hover {
+    background-color: #632bc4;
+    color: white;
 }
 
 .btn {
