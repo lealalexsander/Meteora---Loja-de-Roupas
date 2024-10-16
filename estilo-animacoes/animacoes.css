@@ -1,0 +1,27 @@
+.animacao::before {
+    content: "Camisetas";
+    animation: mudaNome 10s infinite;
+    font-weight: 700;
+}
+
+@keyframes mudaNome {
+    20% {
+        content: "Bolsas";
+        color: blue;
+    }
+
+    40% {
+        content: "Calças";
+        color: red;
+    }
+
+    60% {
+        content: "Acessórios";
+        color: green;
+    }
+
+    90% {
+        content: "Tênis";
+        color: rgb(0, 255, 234);
+    }
+}
