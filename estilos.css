@@ -1,5 +1,7 @@
-@import url("./estilo-animacoes/radio.css");
-@import url("./estilo-animacoes/animacoes.css");
+@import url("./estilos-animacoes/radio.css");
+@import url("./estilos-animacoes/animation.css");
+@import url("./estilos-animacoes/loader.css");
+@import url("./estilos-animacoes/carrossel.css");
 
 .texto-menor {
     font-size: 13px;
@@ -11,8 +13,13 @@
     object-fit: cover;
 }
 
+.botao-lilas:hover {
+    background-color: #6c38c5;
+    color: #D8D8D8;
+}
+
 #produtos img {
-     width: 100%;
+    width: 100%;
     height: 490px;
     object-fit: cover;
 }
@@ -31,12 +38,7 @@
 
 .botao-lilas {
     background-color: #9353FF;
-    transition: ease-in-out 0.3s;
-}
-
-.botao-lilas:hover {
-    background-color: #632bc4;
-    color: white;
+    transition: background-color 0.3s ease-in;
 }
 
 .btn {
@@ -110,11 +112,6 @@ form {
     justify-content: center;
 }
 
-.form-check :checked {
-    background-color: blue;
-    transform: 1s ease-in-out;
-}
-
 .modal-header-icon {
     display: flex;
     align-items: center;
@@ -132,7 +129,7 @@ form {
 }
 
 .card.fade-in {
-    opacity: 1;
+    opacity: 1
 }
 
 @media(min-width: 768px) {
