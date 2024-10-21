@@ -40,6 +40,7 @@ export function imprimirUmDeCadaCategoria(produtos) {
       `;
 
       card.innerHTML = images + cardBody;
+      card.className = "card card-animado";
 
       const modalContent = `
         <div class="modal-content">
@@ -130,6 +131,40 @@ export function imprimirUmDeCadaCategoria(produtos) {
     }
   }
 
-  // Adicionando o container ao corpo da página
-  row.appendChild(card);
+
+
+  function elementoEstaNoviewport(elemento) {
+    const retangulo = elemento.getBoundingClientRect();
+    return (
+      retangulo.top >= 0 &&
+      regangulo.left >= 0 &&
+      retangulo.bottom <= (window.innerHeight || document.documentElement.clienteHeight) &&
+      retangulo.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function elementoEstaNaSecaoDosCards(){
+    const secaoDosCards = document.getElementById ('produtos');
+    const retanguloDoElemento = elemento.getBoundingClientRect();
+    const retanguloSecao = secaoDosCards.getBoundingClientRect();
+
+    return(
+      retanguloDoElemento.top >= reganguloSecao.top &&
+      retanguloDoElemento.bottom >= retanguloSecao.bottom
+    );
+  }
+
+  function verificarVisibilidadeDosCards() {
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach((card) => {
+      if (elementoEstaNaSecaoDosCards(card) && elementoEstaNoviewport(card)) {
+        card.classList.add("fade-in")
+      }
+    })  
+  }   
+  
+  verificarVisibilidadeDosCards();
+  window.addEventListener("scroll", verificarVisibilidadeDosCards);
+
 }

@@ -126,6 +126,15 @@ form {
     font-family: "Inter", sans-serif;
 }
 
+.card-animado {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card.fade-in {
+    opacity: 1;
+}
+
 @media(min-width: 768px) {
 
     .div-novidades {
